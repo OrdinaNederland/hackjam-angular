@@ -12,9 +12,10 @@ export class Category {
 }
 
 @Component({
+  moduleId: module.id,
   selector: 'bookstore',
   // template: ``,
-  templateUrl: '../app/app.template.html'
+  templateUrl: './app.template.html'
 })
 
 export class AppComponent {
