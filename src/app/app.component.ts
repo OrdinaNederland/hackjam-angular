@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import {Component} from '@angular/core';
 
 // Book Type
 export class Book {
@@ -8,7 +8,8 @@ export class Book {
 }
 
 // TODO: Category Type
-export class Category {}
+export class Category {
+}
 
 @Component({
   selector: 'bookstore',
@@ -25,9 +26,10 @@ export class AppComponent {
     console.log('Will be implemented in the next section');
   }
 
-  search(){}
+  search() {
+  }
 
-  toggleSideBar(){
+  toggleSideBar() {
     this.navClosed = !this.navClosed;
   }
 }
