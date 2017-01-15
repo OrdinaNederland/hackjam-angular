@@ -1,46 +1,36 @@
 <header class="header">
-  <div class='overlay'>
+    <div class='overlay'>
     <div class='logo'>
-      <h1>Books by Hackages</h1>
+        <h1>Books by Hackages</h1>
     </div>
-  </div>
+    </div>
 </header>
 <main class="main-content">
-  <!--Menu filters-->
-  <div class="tab-filter-wrapper">
-    <div class="tab-filter">
-      <ul>
-        <li class="placeholder">
-          <a data-type="all" href="#0">All</a>
-        </li>
-        <li *ngFor="let category of categories">
-          <a class="selected" href="#0">{{category.name}}</a>
-        </li>
-      </ul>
-    </div>
-  </div>
+    <!--Menu filters-->
+    <bs-menu [categories]="categories" (categoryChanged)="clicked($event)"></bs-menu>
 
-  <!--List of books-->
-  <section class="gallery">
-    <ul>
-      <li *ngFor="let book of books"><img src="book.cover" (click)="clicked"/></li>
-    </ul>
-  </section>
+    <!--List of books-->
+    <bs-book-list [books]="books"></bs-book-list>
 
-  <!--Sidebar navigation-->
-  <div>
-    <div class="!navClosed ? 'filter filter-is-visible': 'filter'">
-      <form>
-        <div class="filter-block">
-          <h4>Search</h4>
-          <div class="filter-content">
-            <input type="search" placeholder="title, price..." (change)="search"/>
-          </div>
+    <!--Sidebar navigation-->
+    <div>
+        <div [ngClass]="!navClosed ? 'filter filter-is-visible': 'filter'">
+            <form>
+            <div class="filter-block">
+                <h4>Search</h4>
+                <div class="filter-content">
+                    <form (submit)="search()">
+                        <input class="form-control" type="text" id="search"
+                               required
+                               [(ngModel)]="searchString" name="searchString" placeholder="Title or category">
+                    </form>
+
+                </div>
+            </div>
+            </form>
+            <a href="#0" class="close" (click)="toggleSideBar()">Close</a>
         </div>
-      </form>
-      <a href="#0" class="close" (click)="toggleSideBar">Close</a>
-    </div>
 
-    <a href="#0" class="filter-trigger" (click)="toggleSideBar">Filters</a>
-  </div>
+        <a href="#0" class="filter-trigger" (click)="toggleSideBar()">Filters</a>
+    </div>
 </main>
