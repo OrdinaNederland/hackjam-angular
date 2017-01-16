@@ -9,11 +9,9 @@
 ![logo](images/typescript-es6-es5.png)
 
 Note:
-- Notes
-  - TypeScript is not a completely new language, based on ES5/6
-  - If we write ES5/6 code, it’s perfectly valid and compilable TypeScript code. 
-  - TypeScript komt sterk overeen met Java/C#
-- [Rangle blog: typescript met Angular 1](http://blog.rangle.io/write-angular-2-style-code-now-typescript-decorators-components-and-flux-for-angular-1-x-applications)
+- TypeScript is not new, it's based on ES5/6
+- All ES 5/6 code is valid and compilable TypeScript code. 
+- TypeScript is inspired by Java / C#
 
 
 ## What do we get with TypeScript?
@@ -71,3 +69,50 @@ class BookListComponent implements IBookListComponent {
 
 
 ## Arrow functions
+- ES5-like example
+```
+var data = ['Alice Green', 'Paul Pfifer', 'Louis Blakenship'];
+data.forEach(function(line) { console.log(line); });
+```
+
+- Typescript example
+```
+var data: string[] = ['Alice Green', 'Paul Pfifer', 'Louis Blakenship'];
+data.forEach( (line) => console.log(line) );
+```
+
+---
+
+- Fat arrows share `this` with surrounding code
+```
+var nate = {
+   name: "Nate",
+   guitars: ["Gibson", "Martin", "Taylor"],
+   printGuitars: function() {
+       this.guitars.forEach( (g) => {
+         console.log(this.name + " plays a " + g);
+     });
+   }
+};
+```
+
+
+## Template strings
+
+The two great features of template strings are
+- Variables within strings (without being forced to concatenate with +)
+- Multi-line strings
+                   
+```
+// Variables in strings
+var firstName = "Nate";
+var lastName = "Murray";
+var greeting = `Hello ${firstName} ${lastName}`;
+
+
+// Multi-line templates
+var template = `<div>
+                   <h1>Hello</h1>
+                   <p>This is a great website</p>
+                </div>`
+```
