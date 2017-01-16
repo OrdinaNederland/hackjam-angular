@@ -13,5 +13,5 @@
 ||
 | ------------- |:-------------
 | ![headshot](images/us/erik-berndt.jpg) | Erik-Berndt Scheper <!-- .element: style="vertical-align: middle;" -->
-| ![headshot](images/us/thomas.jpg)      | Thomas Lodewi**jk     <!-- .element: style="vertical-align: middle;" -->
+| ![headshot](images/us/thomas.jpg)      | Thomas Lodewijk     <!-- .element: style="vertical-align: middle;" -->
 | ![headshot](images/us/peter.jpg)       | Peter Eijgermans    <!-- .element: style="vertical-align: middle;" -->
