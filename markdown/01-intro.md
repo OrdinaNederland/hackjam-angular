@@ -1,11 +1,11 @@
 ## What's up !?
 - Introduction
-- Korte presentatie (TypeScript en Angular)
-- (diner)
-- HackJam (deel 1)
-- Korte presentatie (Angular)
-- HackJam (deel 2)
-- Afsluiting
+- (dinner)
+- TypeScript / Angular 101 (part 1)
+  - Hack-jam
+- Angular 101 (part 2)
+  - Hack-jam
+- Wrap-up
 
 
 ## Who are we?

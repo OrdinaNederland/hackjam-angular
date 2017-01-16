@@ -1,4 +1,4 @@
-## TypeScript
+## TypeScript 101
 *Angular is built on TypeScript!*
 
 ![logo](images/typescript-logo.png)
@@ -21,7 +21,12 @@ There are five big improvements that TypeScript bring over ES5:
 - classes
 - annotations
 - imports
-- language utilities (e.g. destructuring)
+- language utilities
+
+Note:
+- Language utilities include
+  - Fat arrows (lambda's)
+  - Template strings (multi-line / variable expansion)
 
 
 ## Types
@@ -108,11 +113,14 @@ The two great features of template strings are
 var firstName = "Nate";
 var lastName = "Murray";
 var greeting = `Hello ${firstName} ${lastName}`;
-
-
-// Multi-line templates
-var template = `<div>
-                   <h1>Hello</h1>
-                   <p>This is a great website</p>
-                </div>`
 ```
+
+---
+
+```
+var template = `<div>
+  <h1>Hello</h1>
+  <p>This is a great website</p>
+</div>` 
+```
+
