@@ -109,9 +109,9 @@ export class AppModule {
 
 ## Data binding (1/4)
 
-#### The mechanism used to ensure the link between 
-- what a user sees on the screen (view / template)
-- and the data value in the components. 
+- The mechanism used to ensure the link between 
+  - what a user sees on the screen (view / template)
+  - and the data value in the components. 
 
 ![data-binding](images/part1/data-binding.png)
 

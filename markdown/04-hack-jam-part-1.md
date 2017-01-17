@@ -29,8 +29,8 @@ yarn start
 
 ![data-binding](images/confused-emoticon-small.png)
 
-Oops...
-- This application doesn't work 
+#### Oops...
+- The application doesn't work 
 - Your job: fix the bugs
 - Until it looks OK
 
@@ -38,7 +38,7 @@ Oops...
 ###  Tasks (1/2)
 1. Fix all the bugs before trying to implement any other features
 2. Display all categories on the menu
-   - Learn about structural directive
+   - Learn about structural directives
    - Learn how to create a class and create a typed array in TypeScript
 3. Display all books on the main area
    - Learn about property bindings
@@ -54,7 +54,7 @@ Oops...
 2. Implement the search
    - Learn about `Forms` and `NgModel`
    - The search should be applied to the title and the category
-3. Architecture: Split your app into small components (bonus)
+3. Help others :-)
 
 
 ## If you need help?

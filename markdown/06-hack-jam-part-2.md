@@ -1,12 +1,18 @@
 ## Hack-jam (part 2)
 *You'll improve the architecture of your Angular Application!*
 
-#### Split your app into smaller components
-
-1. Implement the BookListComponent
-2. Implement the MenuComponent
-3. Implement the HeaderComponent
-4. Implement the SideBarComponent
+1. Implement the AppService in your AppComponent
+2. Split your application into smaller components
+   - BookListComponent
+   - MenuComponent
+   - HeaderComponent
+   - SideBarComponent
+3. Bonus exercise
+   - Implement the service using the HttpModule
+   - Convert `const mockBooks: Book []` to a JSON file
+   - Find out the URL to retrieve the JSON-file
+   - Use `http.get()` to return `Observable<Book[]>`
+   - Convert the response using `rxjs/add/operator/map`
 
 
 ## Hack-jam (part 2)

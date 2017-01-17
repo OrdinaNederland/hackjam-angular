@@ -12,5 +12,3 @@ Step right in! The style guide presents preferred conventions and, as importantl
 ## [NG-Book 2](https://www.ng-book.com/2/)
 
 ![The complete book on Angular, by http://fullstack.io](images/angular/ng-book-2.jpg)
-
-
