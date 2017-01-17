@@ -8,6 +8,16 @@
 - Wrap-up
 
 
+## Goals for today 
+*Let's learn the basics of Angular*
+
+- A bit of TypeScript
+- Modules
+- Components
+- Attribute, property and event bindings
+- Forms and NgModel
+
+
 ## Who are we?
 
 ||

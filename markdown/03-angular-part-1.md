@@ -1,17 +1,21 @@
 ## Angular 101 - Part 1
 
 - Components
+- Modules
+- Data-binding
+  - One-way, two-way binding
+  - Property binding
+  - (Event binding)
 - Forms
-- Data-binding 
 
 
-## Components (1) - End result
+## Components (1/4) - End result
 *You'll build a working web application with Angular!*
 
 ![logo](images/part1/result.png)
 
 
-## Components (2) - Application structure
+## Components (2/4) - Application structure
 *All Angular apps are structured!*
 
 ![logo](images/part1/components.png)
@@ -20,7 +24,7 @@ Note:
 - Relate components to the end-result!
 
 
-## Components (3) - Tree based
+## Components (3/4) - Tree based
 *An Angular app consist of a tree of components!*
 - Each component adds logic / behaviour to DOM elements
 
@@ -32,7 +36,7 @@ Note:
 - AppComponent is the parent of MenuComponent and BookListComponent
 
 
-## Components (4) - Syntax
+## Components (4/4) - Syntax
 *All components are written in TypeScript!*
 
 - Reference this component in HTML with the `<book-list>` - tag. 
@@ -62,12 +66,11 @@ export class BookListComponent implements OnInit {
 ```
 
 Note:
-How to convert this class in a Component:
-- Decorate a class to be a Component with the @Component decorator
+- Decorate a class to be a Component with the `@Component` decorator
 - Export the component to make it publicly available
-- Do *NOT* use constructor, but *ngOnInit()* for initialization  
-- templateUrl == the component's template
- 
+- Use `ngOnInit()` for initialization, not the `constructor`  
+- Use `templateUrl` or `template` to define the component's template
+
 
 ## Modules (1/2)
 *Angular applications are composed of modules*
@@ -85,15 +88,15 @@ Note:
 import {NgModule} from '@angular/core';
 import {BrowserModule} from '@angular/platform-browser';
 import {AppComponent} from './app.component';
-import {FormsModule} from '@angular/forms';
 import {AppService} from './services/app.service';
 
 @NgModule({
-  imports: [ BrowserModule, FormsModule
+  imports: [ 
+    BrowserModule
   ], // Import (built-in) modules
   declarations: [
     AppComponent
-    ], // Declare the components used by this module
+  ], // Declare the components used by this module
   providers: [
     AppService
   ],
@@ -105,9 +108,10 @@ export class AppModule {
 
 
 ## Data binding (1/4)
-- The mechanism used to ensure the link between 
-  - what a user sees on the screen (view / template)
-  - and the data value in the components. 
+
+#### The mechanism used to ensure the link between 
+- what a user sees on the screen (view / template)
+- and the data value in the components. 
 
 ![data-binding](images/part1/data-binding.png)
 
@@ -133,13 +137,16 @@ Note:
 4. Two way data binding  is used in forms.
 
 
-## Two way data-binding (example)
+## Data binding (3/4)
+*Two way data-binding (example)*
 
 <iframe class="stretch" src="https://embed.plnkr.co/HpQHJ6ljGFrHy8abCPuh/" frameborder="0" allowfullscreen></iframe>
 
 
-## Property binding
-*Can be used to show / hide CSS Classes
+## Data binding (4/4)
+*Property binding*
+
+#### Can be used to show / hide CSS Classes
 
 ```
 <div [class.filter-is-visible]=“isVisible“>
@@ -162,4 +169,56 @@ Note:
    - The right-hand expression should return `{class-name: true/false}` map.
 
 
-## Forms
+## Forms (1/3)
+
+#### Add the `FormsModule` to the `NgModule`
+
+```
+// Entry point of our application
+import {NgModule} from '@angular/core';
+import {BrowserModule} from '@angular/platform-browser';
+import {AppComponent} from './app.component';
+import {FormsModule} from '@angular/forms';
+import {AppService} from './services/app.service';
+
+@NgModule({
+  imports: [ 
+    BrowserModule
+    , FormsModule
+  ], // Import (built-in) modules
+  declarations: [
+    AppComponent
+  ], // Declare the components used by this module
+  providers: [
+    AppService
+  ],
+  bootstrap: [AppComponent] // Main component you need to bootstrap
+})
+```
+
+Note:
+- Add forms module to `@NgModule` class
+
+
+## Forms (2/3)
+*Use `[(ngModel)]` for two-way databinding
+
+![data-binding](images/part1/data-binding-2.png)
+
+Note:
+- `[(ngModel)]` Provides 
+  - two-way data-binding
+  - parsing
+  - validation for form controls
+
+
+## Forms (3/3)
+*Example of `[(ngModel)]`*
+
+```
+<form (submit)="search()">
+  <input class="form-control" type="text" id="search" 
+         required [(ngModel)]="searchString"
+         name="searchString" placeholder="Title or category" />
+</form>
+```
