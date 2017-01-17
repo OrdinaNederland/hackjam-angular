@@ -10,7 +10,7 @@
 1. Clone the repo
 2. Install 'Angular CLI' 
 3. (optional) install [Yarn](https://yarnpkg.com/en/docs/install) from yarnpkg.com
-   - or used npm instead 
+   - or use npm instead 
 
 ```
 git clone https://github.com/OrdinaNederland/hackjam-angular
@@ -27,33 +27,44 @@ yarn install
 yarn start
 ```
 
-#### Bootstrap your application
+![data-binding](images/confused-emoticon-small.png)
 
-:confounded:
-
+Oops...
 - This application doesn't work 
-- Your job: fix the bugs :ok_hand:
-- Until it looks like this:
-[Final app](http://hackjam.hackages.io)
+- Your job: fix the bugs
+- Until it looks OK
 
 
-###  Where do we start?
-- Fix all the bugs before trying to implement any other features
-- Display all categories on the menu
-  - Learn about structural directive
-  - Learn how to create a class and create a typed array in TypeScript
-- Display all books on the main area
-  - Learn about property bindings
-- On click on a category, update the list of books and change the class to selected
+###  Tasks (1/2)
+1. Fix all the bugs before trying to implement any other features
+2. Display all categories on the menu
+   - Learn about structural directive
+   - Learn how to create a class and create a typed array in TypeScript
+3. Display all books on the main area
+   - Learn about property bindings
+4. When a category is clicked
+  - The list of books should be updated and the class changed to `selected`
   - The filter should be apply to the category of the book
   - The css class should be applied to the anchor:
     - hint `[class.selected]`
-- On click on the filter button, open the sidebar filter component
-- Implement the search
-  - Learn about `Forms` and `NgModel`
-  - The search should be applied to the title and the category
-- Architecture: Split your app into small components (bonus)
 
-- The [presentation slides](https://ordinanederland.github.io/hackjam-angular)
 
-Happy Coding!!
+##  Tasks (2/2)
+1. On click on the filter button, open the sidebar filter component
+2. Implement the search
+   - Learn about `Forms` and `NgModel`
+   - The search should be applied to the title and the category
+3. Architecture: Split your app into small components (bonus)
+
+
+## If you need help?
+- Ask us!
+- Check the [presentation slides](https://ordinanederland.github.io/hackjam-angular)
+  - https://ordinanederland.github.io/hackjam-angular
+- Google is your friend, and
+  - [https://angular.io](https://angular.io)
+  - [https://angular.io/docs/ts/latest/guide/cheatsheet.html](https://angular.io/docs/ts/latest/guide/cheatsheet.html)
+- Or cheat ...  
+  - docs / Guide_hackjam.docx
+  
+*Happy Coding!!*
