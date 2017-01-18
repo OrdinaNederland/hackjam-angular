@@ -13,7 +13,7 @@
         <li class="placeholder">
           <a data-type="all" href="#0">All</a>
         </li>
-        <li ngFor="let category in categories">
+        <li *ngFor="let category of categories">
           <a class="selected" href="#0">{{category.name}}</a>
         </li>
       </ul>

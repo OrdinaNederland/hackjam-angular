@@ -1,14 +1,11 @@
 import {Component} from '@angular/core';
+import {Category, categories} from './mocks/categories';
 
 // Book Type
 export class Book {
   title: Number;
   cover: String;
   category: String;
-}
-
-// TODO: Category Type
-export class Category {
 }
 
 @Component({
@@ -20,7 +17,7 @@ export class Category {
 
 export class AppComponent {
   books: Book [] = []; // use mocks data instead
-  categories: String [] = ['All', 'Web']; // use mocks data instead
+  categories: Category [] = categories;
   navClosed: Boolean = true;
 
   clicked() {
