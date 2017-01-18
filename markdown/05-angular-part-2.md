@@ -1,78 +1,108 @@
 ## Angular 101 - Part 2
+*Services and architecture*
 
-#### Services
-- Services are used to provide data to components
+![architecture](images/part2/angular-architecture.jpg)
 
-#### Architecture
-- Parent-child relations between components
-- Passing data and events
-- RxJS 
+Note:
+- Angular architecture is based on
+  - small(er) components 
+  - services to provide data to components
 
 
-## Services
-- Steps how to make a service for getting the books and categories
-  Create a new folder: app/services
-  Add a service in this folder: app.service.ts
-  Import this new service in app.component.ts
-  Import {AppService} from ‘./service/app.service’
-  Define the service as a provider in app.component.ts
-  @Component  providers: [AppService]
-  Inject an instance of the AppService via the constructor of the AppComponent
-  Use the AppService to fetch the Books and Categories  make use of the lifecycle hook: ngOnInit
+## Services (1/2)
+*What's the point?*
+
+- Provide a place where our components can retrieve data 
+  - books
+  - categories
+- Are essentially a singleton
+- Are declared as a 'provider' in the NG-module
+- Are decorated with `@Injectable`
+- Are injected into components via the constructor
+
+
+## Services (2/2)
+*How do I make one?*
+
+1. Create a new folder: `app/services`
+2. Add a TypeScript class in this folder (`app.service.ts`)
+3. Define the service as a 'provider' in `app.module.ts`
+4. Inject an instance of the AppService via the constructor of the AppComponent
+5. Use the AppService to fetch the Books and Categories
+   - make use of the lifecycle hook: `ngOnInit`
 
 Note:
 - To make this service injectable, we need to create a provider for it first.
 
 
-## AppService
-import{Book, mockBooks} from ‘../mocks/books’
-// To do: 
-// import categories….
+## Sample code for App-Service
 
- export class AppService {
-       getBooks(): Promise<Books[]> {
-           return Promise.resolve(mockBooks);
-       }
+```
+import { Injectable } from '@angular/core';
+import { Book, mockBooks } from '../mocks/books';
+// TODO:  import categories….
 
-        // Todo: 
-        getCategories(): …
-       }
+@Injectable()
+export class AppService {
+    getBooks(): Promise<Book[]> {
+        return Promise.resolve(mockBooks);
+    }
+
+    // TODO: getCategories(): {}
+
 }
+```
 
 Note:
-- You export the AppService class so that you can import it into the application that you just created.
 - Use `Promise` for asynchronous calls
+- We can improve this code by using RxJS `Observable`
 
 
-## Use the AppService in your AppComponent
-Import { AppService } from './services/app.service';
+## Sample code for App-Module
 
-@Component({
-    selector: 'bookstore',
-    templateUrl: '../app/app.template.html',
-    providers: [ AppService ]
+```
+import {AppService} from './services/app.service';
+
+@NgModule({
+  imports: [
+     // .... unchanged
+  ],
+  declarations: [
+     // .... unchanged
+  providers: [
+    AppService
+  ],
+  bootstrap: [
+     // .... unchanged
 })
+```
 
 Note:
-- To make this service injectable, we need to create a provider for it first.
+- To make this service injectable, we add it to the providers.
 
 
-## Inject service via the constructor of the AppComponent
+## Sample code for App-Component
 
-constructor(private appService: AppService) {  }
+```
+  constructor(private appService: AppService) {
+    //empty constructor
+  }
 
-public ngOnInit(){
+  public ngOnInit() {
     this.appService.getBooks().then((books) => {
       this.books = books;
     });
 
-    // Todo: 
-    // get the categories…
+    // TODO: get the categories…
+
   }
 
+```
+
 Note:
-- Use lifecycle-hook: `ngOnInit()` !!!
+- Inject service via the constructor of the AppComponent
 - Use `implements OnInit`
+- Use lifecycle-hook: `ngOnInit()` !!!
 
 
 ## Architecture (1/3)
@@ -85,8 +115,7 @@ Note:
 
 
 ## Architecture (2/3)
-
-#### Input for components
+*Input for components*
 - To define an input for a component, we use the `@Input` decorator.
 - The input can be of an arbitrary type.
 
