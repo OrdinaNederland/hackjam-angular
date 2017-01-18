@@ -23,7 +23,7 @@
   <!--List of books-->
   <section class="gallery">
     <ul>
-      <li ngIf="let book of books"><img src="book.cover" click="clicked"/></li>
+      <li *ngFor="let book of books"><img src="book.cover" click="clicked"/></li>
     </ul>
   </section>
 
