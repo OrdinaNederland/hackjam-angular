@@ -3,11 +3,11 @@
 | ------------- |:-------------
 | 17:00 – 17:15 | Introduction
 | 17:15 – 17:45 | Dinner
-| 17:45 – 18:30 | TypeScript / Angular 101
-| 18:30 – 19:00 | Hack-jam (part 1)
-| 19:00 – 19:30 | Angular 101 (continued)
-| 19:30 – 21:00 | Hack-jam (part 2)
-| 21:00         | Wrap-up and drinks
+| 17:45 – 18:00 | TypeScript / Angular 101
+| 18:00 – 19:00 | Hack-jam (part 1)
+| 19:00 – 19:15 | Angular 101 (continued)
+| 19:15 – 20:00 | Hack-jam (part 2)
+| 20:00 - 20:30 | Wrap-up and drinks
 
 
 ## Goals for today 
