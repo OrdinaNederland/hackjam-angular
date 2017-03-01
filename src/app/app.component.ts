@@ -12,14 +12,15 @@ export class Category {
 }
 
 @Component({
+  moduleId: module.id,
   selector: 'bookstore',
   // template: ``,
-  templateUrl: '../app/app.template.html'
+  templateUrl: './app.component.html'
 })
 
 export class AppComponent {
   books: Book [] = []; // use mocks data instead
-  categories: String [] = ['All', 'Web']; // use mocks data instead
+  categories: String [] = ['Alles']; // use mocks data instead
   navClosed: Boolean = true;
 
   clicked() {
