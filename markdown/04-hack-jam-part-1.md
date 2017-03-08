@@ -1,11 +1,13 @@
-## Hack-jam (part 1)
-*You'll build a working web application with Angular!*
+## Angular Hack-jam
+*Let's build a working web application with Angular!*
 
 ![logo](images/part1/result.png)
 
 
 ## Getting started (1/2)
-*You can find the [repo on Github](https://github.com/OrdinaNederland/hackjam-angular)*
+*You can find the repo on Github*
+
+*(https://github.com/OrdinaNederland/hackjam-angular)*
 
 1. Clone the repo
 2. Install 'Angular CLI' 
@@ -14,7 +16,7 @@
 
 ```
 git clone https://github.com/OrdinaNederland/hackjam-angular
-npm i angular-cli@latest -g
+npm install -g @angular/cli
 ```
 
 
@@ -40,11 +42,11 @@ yarn start
 2. Display all categories on the menu
    - Learn about structural directives
    - Learn how to create a class and create a typed array in TypeScript
-3. Display all books on the main area
+3. Display all parties on the main area
    - Learn about property bindings
 4. When a category is clicked
-  - The list of books should be updated and the class changed to `selected`
-  - The filter should be apply to the category of the book
+  - The list of parties should be updated and the class changed to `selected`
+  - The filter should be apply to the category of the party
   - The css class should be applied to the anchor:
     - hint `[class.selected]`
 
@@ -66,5 +68,20 @@ yarn start
   - [https://angular.io/docs/ts/latest/guide/cheatsheet.html](https://angular.io/docs/ts/latest/guide/cheatsheet.html)
 - Or cheat ...  
   - docs / Guide_hackjam.docx
-  
-*Happy Coding!!*
+
+
+## Tasks (bonus)
+*There's lots to improve in your Angular Application!*
+
+1. Implement the AppService in your AppComponent
+2. Split your application into smaller components
+   - PartyListComponent
+   - MenuComponent
+   - HeaderComponent
+   - SideBarComponent
+3. Bonus exercise
+   - Implement the service using the HttpModule
+   - Convert `const mockParties: Party []` to a JSON file
+   - Find out the URL to retrieve the JSON-file
+   - Use `http.get()` to return `Observable<Party[]>`
+   - Convert the response using `rxjs/add/operator/map`

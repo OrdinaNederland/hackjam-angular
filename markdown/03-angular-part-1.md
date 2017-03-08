@@ -1,4 +1,4 @@
-## Angular 101 - Part 1
+## Angular 101
 
 - Components
 - Modules
@@ -9,8 +9,8 @@
 - Forms
 
 
-## Components (1/4) - End result
-*You'll build a working web application with Angular!*
+## Components (1/4) - Everywhere !
+*Components are the building blocks of an Angular application!*
 
 ![logo](images/part1/result.png)
 
@@ -123,11 +123,11 @@ export class AppModule {
 ```
 <div>{{book.title}}</div> 
 
-<input value=“text” [disabled]=“isDisabled”></input> 
+<input value="text" [disabled]="isDisabled"></input> 
 
-<div (click)="selectBook($event)></div>
+<div (click)="selectBook($event)"></div>
 
-<input [(ngModel)]=“searchTermBook" >
+<input [(ngModel)]="searchTermBook" >
 ```
 
 Note:
@@ -149,7 +149,7 @@ Note:
 #### Can be used to show / hide CSS Classes
 
 ```
-<div [class.filter-is-visible]=“isVisible“>
+<div [class.filter-is-visible]="isVisible">
 ```
 
 OR
@@ -157,8 +157,8 @@ OR
 ```
 <div [ngClass]="{active: isActive, disabled: isDisabled}">
 
-<div [ngClass]="selCat==category.name ? 'selected' : '‘ ">
-<div [ngClass]="!navClosed ? 'filter filter-is-visible': 'filter‘ ">
+<div [ngClass]="selCat==category.name ? 'selected' : '' ">
+<div [ngClass]="!navClosed ? 'filter.filter-is-visible': 'filter' ">
 ```
 
 Note:

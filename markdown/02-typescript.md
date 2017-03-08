@@ -39,7 +39,7 @@ The new TypeScript syntax is a natural evolution from ES5:
 var name: string;
 
 function greetText(name: string): string {
-   return "Hello " + name;
+   return 'Hello ' + name;
 }
 ```
 
@@ -63,13 +63,12 @@ interface IBookListComponent {
 }
 
 class BookListComponent implements IBookListComponent {
-          books:  String[];
+  books: String[];
 
-          constructor() {
-              this.books =[‘book1’, ‘book2’]
-     }  
+  constructor() {
+    this.books = ['book1', 'book2'];
+  }
 }
-
 ```
 
 
@@ -91,11 +90,11 @@ data.forEach( (line) => console.log(line) );
 - Fat arrows share `this` with surrounding code
 ```
 var nate = {
-   name: "Nate",
-   guitars: ["Gibson", "Martin", "Taylor"],
+   name: 'Nate',
+   guitars: ['Gibson', 'Martin', 'Taylor'],
    printGuitars: function() {
        this.guitars.forEach( (g) => {
-         console.log(this.name + " plays a " + g);
+         console.log(this.name + ' plays a ' + g);
      });
    }
 };
@@ -110,8 +109,8 @@ The two great features of template strings are
                    
 ```
 // Variables in strings
-var firstName = "Nate";
-var lastName = "Murray";
+var firstName = 'Nate';
+var lastName = 'Murray';
 var greeting = `Hello ${firstName} ${lastName}`;
 ```
 
