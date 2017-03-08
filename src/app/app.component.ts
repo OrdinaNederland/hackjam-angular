@@ -1,4 +1,5 @@
 import {Component} from '@angular/core';
+import {mockCategories, Category} from './mocks/categories';
 
 // Party Type
 export class Party {
@@ -10,20 +11,16 @@ export class Party {
   categorie: String;
 }
 
-// TODO: Category Type
-export class Category {
-}
-
 @Component({
   moduleId: module.id,
-  selector: 'app-partylist',
+  selector: 'app-kieskompas',
   // template: ``,
   templateUrl: './app.component.html'
 })
 
 export class AppComponent {
   parties: Party [] = []; // use mocks data instead
-  categories: String [] = ['Alles']; // use mocks data instead
+  categories: Category [] = mockCategories; // use mocks data instead
   navClosed: Boolean = true;
 
   clicked() {
