@@ -1,0 +1,8 @@
+<!-- List parties -->
+<section class="gallery" [class.filter-is-visible]="!navClosed">
+  <ul>
+    <li *ngFor="let party of parties">
+      <img src="{{party.logo}}" (click)="clicked" title="{{party.titel}}"/>
+    </li>
+  </ul>
+</section>

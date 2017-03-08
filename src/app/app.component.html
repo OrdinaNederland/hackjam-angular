@@ -7,27 +7,10 @@
 </header>
 <main class="main-content">
   <!--Menu filters-->
-  <div class="tab-filter-wrapper">
-    <div class="tab-filter">
-      <ul>
-        <li class="placeholder">
-          <a data-type="all" href="#0">All</a>
-        </li>
-        <li *ngFor="let category of categories">
-          <a [class.selected]="category.selected" href="#0" (click)="clicked(category)">{{category.name}}</a>
-        </li>
-      </ul>
-    </div>
-  </div>
+  <app-menu [categories]="categories" (categoryChanged)="clicked($event)"></app-menu>
 
-  <!-- List parties -->
-  <section class="gallery" [class.filter-is-visible]="!navClosed">
-    <ul>
-      <li *ngFor="let party of parties">
-        <img src="{{party.logo}}" (click)="clicked" title="{{party.titel}}"/>
-      </li>
-    </ul>
-  </section>
+  <!--List parties-->
+  <app-party-list [parties]="parties"></app-party-list>
 
   <!--Sidebar navigation-->
   <div>
