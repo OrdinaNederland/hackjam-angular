@@ -1,7 +1,7 @@
 <header class="header">
   <div class='overlay'>
     <div class='logo'>
-      <h1>Books by Hackages</h1>
+        <h1>Kieskompas revisited</h1>
     </div>
   </div>
 </header>
@@ -20,10 +20,10 @@
     </div>
   </div>
 
-  <!--List of books-->
+  <!--List of parties-->
   <section class="gallery">
     <ul>
-      <li ngIf="let book of books"><img src="book.cover" click="clicked"/></li>
+      <li ngIf="let party of parties"><img src="party.logo" click="clicked" title="{{party.titel}}" /></li>
     </ul>
   </section>
 
