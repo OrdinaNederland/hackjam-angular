@@ -9,13 +9,14 @@ import {AppService} from './services/app.service';
   selector: 'app-kieskompas',
   // template: ``,
   templateUrl: './app.component.html'
+
 })
 
 export class AppComponent implements OnInit {
   parties: Party [];
   categories: Category[];
-  navClosed: Boolean = true;
-  public searchString;
+  sidebarVisible = false; // default.
+
 
   private static sortParties(party1: Party, party2: Party): number {
     if (party1.afkorting > party2.afkorting) {
@@ -58,17 +59,17 @@ export class AppComponent implements OnInit {
     this.parties = mockParties.filter(party => party.categorie === category.name).sort(AppComponent.sortParties);
   }
 
-  search() {
-    console.log(this.searchString);
+  handleSearch(searchPhrase: String) {
+    //  console.log(`In app.hhcomp  + ${searchPhrase}`);
 
     this.parties = mockParties.filter(
-      b => b.trefwoorden.find(trefwoord => trefwoord.toLowerCase().includes(this.searchString.toLowerCase()))
-      || b.titel.toLowerCase().includes(this.searchString.toLowerCase())
+      b => b.trefwoorden.find(trefwoord => trefwoord.toLowerCase().includes(searchPhrase.toLowerCase()))
+      || b.titel.toLowerCase().includes(searchPhrase.toLowerCase())
     ).sort(AppComponent.sortParties);
   }
 
-
-  toggleSideBar() {
-    this.navClosed = !this.navClosed;
+  handleSidebarToggle() {
+   //  console.log( `de sidebar is  nu: `);
+    this.sidebarVisible = !this.sidebarVisible;
   }
 }

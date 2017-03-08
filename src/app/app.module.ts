@@ -7,6 +7,7 @@ import {AppComponent} from './app.component';
 import {FormsModule} from '@angular/forms';
 import {HttpModule} from '@angular/http';
 import {AppService} from './services/app.service';
+import {SidebarComponent} from './components/sidebar/sidebar.component';
 
 @NgModule({
   imports: [
@@ -17,7 +18,8 @@ import {AppService} from './services/app.service';
   declarations: [
     AppComponent
     , PartyListComponent
-    , MenuComponent], // Inject your own modules
+    , MenuComponent
+    , SidebarComponent], // Inject your own modules
   providers: [
     AppService
   ],

@@ -8,9 +8,13 @@ import {Party} from '../../mocks/parties';
 })
 
 export class PartyListComponent {
-
+  // navClosed : boolean = true;
   @Input() parties: Party[];
+  @Input() sidebarVisible: boolean;
 
+  clicked(party: Party) {
+    console.log(`Klik.. ${party.titel}`);
+  }
 }
 
 
