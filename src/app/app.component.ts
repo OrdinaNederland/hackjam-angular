@@ -1,10 +1,13 @@
 import {Component} from '@angular/core';
 
-// Book Type
-export class Book {
-  title: Number;
-  cover: String;
-  category: String;
+// Party Type
+export class Party {
+  afkorting: String;
+  titel: String;
+  lijsttrekker: String;
+  logo: String;
+  trefwoorden?: String[];
+  categorie: String;
 }
 
 // TODO: Category Type
@@ -13,13 +16,13 @@ export class Category {
 
 @Component({
   moduleId: module.id,
-  selector: 'bookstore',
+  selector: 'app-partylist',
   // template: ``,
   templateUrl: './app.component.html'
 })
 
 export class AppComponent {
-  books: Book [] = []; // use mocks data instead
+  parties: Party [] = []; // use mocks data instead
   categories: String [] = ['Alles']; // use mocks data instead
   navClosed: Boolean = true;
 
