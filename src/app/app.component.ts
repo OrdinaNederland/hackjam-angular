@@ -13,6 +13,7 @@ export class AppComponent {
   parties: Party [] = mockParties; // use mocks data instead
   categories: Category [] = mockCategories; // use mocks data instead
   navClosed: Boolean = true;
+  searchString: string;
 
   private static sortParties(party1: Party, party2: Party): number {
     if (party1.afkorting > party2.afkorting) {
@@ -42,6 +43,12 @@ export class AppComponent {
   }
 
   search() {
+    console.log(this.searchString);
+
+    this.parties = mockParties.filter(
+      b => b.trefwoorden.find(trefwoord => trefwoord.toLowerCase().includes(this.searchString.toLowerCase()))
+      || b.titel.toLowerCase().includes(this.searchString.toLowerCase())
+    ).sort(AppComponent.sortParties);
   }
 
   toggleSideBar() {

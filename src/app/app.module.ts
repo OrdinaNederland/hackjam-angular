@@ -2,9 +2,10 @@
 import {NgModule} from '@angular/core';
 import {BrowserModule} from '@angular/platform-browser';
 import {AppComponent} from './app.component';
+import {FormsModule} from '@angular/forms';
 
 @NgModule({
-  imports: [BrowserModule], // Inject built-in modules
+  imports: [BrowserModule, FormsModule], // Inject built-in modules
   declarations: [AppComponent], // Inject your own components
   bootstrap: [AppComponent] // Module you need to bootstrap
 })
