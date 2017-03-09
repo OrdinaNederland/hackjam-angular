@@ -1,5 +1,5 @@
 import {Component} from '@angular/core';
-import {mockCategories, Category} from './mocks/categories';
+import {Category, mockCategories} from './mocks/categories';
 import {mockParties, Party} from './mocks/parties';
 
 @Component({
@@ -14,8 +14,31 @@ export class AppComponent {
   categories: Category [] = mockCategories; // use mocks data instead
   navClosed: Boolean = true;
 
-  clicked() {
-    console.log('Will be implemented in the next section');
+  private static sortParties(party1: Party, party2: Party): number {
+    if (party1.afkorting > party2.afkorting) {
+      return 1;
+    } else if (party1.afkorting < party2.afkorting) {
+      return -1;
+    } else {
+      return 0;
+    }
+  }
+
+  private filterBooks(category: Category): void {
+    if (category.name === 'Alles') {
+      this.parties = mockParties;
+      return;
+    }
+    this.parties = mockParties.filter(party => party.categorie === category.name).sort(AppComponent.sortParties);
+  }
+
+  clicked(selectedCategory: Category): void {
+    this.categories = this.categories.map(category => {
+      category.selected = category === selectedCategory;
+      return category;
+    });
+
+    this.filterBooks(selectedCategory);
   }
 
   search() {
