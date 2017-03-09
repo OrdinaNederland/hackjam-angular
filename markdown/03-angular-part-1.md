@@ -158,7 +158,7 @@ OR
 <div [ngClass]="{active: isActive, disabled: isDisabled}">
 
 <div [ngClass]="selCat==category.name ? 'selected' : '' ">
-<div [ngClass]="!navClosed ? 'filter.filter-is-visible': 'filter' ">
+<div [ngClass]="!navClosed ? 'filter filter-is-visible': 'filter'">
 ```
 
 Note:
