@@ -73,14 +73,14 @@ yarn start
 ## Tasks (bonus)
 *There's lots to improve in your Angular Application!*
 
-1. Implement the AppService in your AppComponent
-2. Split your application into smaller components
+1. Implement a service to retrieve the parties and categories
+2. Architecture - refactor your application into separate components
    - PartyListComponent
    - MenuComponent
    - HeaderComponent
    - SideBarComponent
 3. Bonus exercise
-   - Implement the service using the HttpModule
+   - Reimplement the application service using the Angular HttpModule
    - Convert `const mockParties: Party []` to a JSON file
    - Find out the URL to retrieve the JSON-file
    - Use `http.get()` to return `Observable<Party[]>`

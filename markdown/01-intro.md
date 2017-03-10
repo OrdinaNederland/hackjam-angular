@@ -23,5 +23,5 @@
 ||
 | ------------- |:-------------
 | ![headshot](images/us/erik-berndt.jpg) | Erik-Berndt Scheper <!-- .element: style="vertical-align: middle;" -->
-| ![headshot](images/us/ghost-image.jpg) | Johan Hutting    <!-- .element: style="vertical-align: middle;" -->
+| ![headshot](images/us/johanhutting.png) | Johan Hutting    <!-- .element: style="vertical-align: middle;" -->
 | ![headshot](images/us/thomas.png)      | Thomas Lodewijk     <!-- .element: style="vertical-align: middle;" -->
