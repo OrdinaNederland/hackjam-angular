@@ -14,16 +14,18 @@
           <a data-type="all" href="#0">All</a>
         </li>
         <li *ngFor="let category of categories">
-          <a class="selected" href="#0" (click)="clicked(category)">{{category.name}}</a>
+          <a [class.selected]="category.selected" href="#0" (click)="clicked(category)">{{category.name}}</a>
         </li>
       </ul>
     </div>
   </div>
 
-  <!--List of parties-->
+  <!-- List parties -->
   <section class="gallery" [class.filter-is-visible]="!navClosed">
     <ul>
-      <li *ngFor="let party of parties"><img src="{{party.logo}}" click="clicked" title="{{party.titel}}" /></li>
+      <li *ngFor="let party of parties">
+        <img src="{{party.logo}}" (click)="clicked" title="{{party.titel}}"/>
+      </li>
     </ul>
   </section>
 
