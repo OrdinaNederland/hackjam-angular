@@ -1,51 +1,17 @@
 <header class="header">
   <div class='overlay'>
     <div class='logo'>
-        <h1>Kieskompas revisited</h1>
+      <h1>Kieskompas revisited</h1>
     </div>
   </div>
 </header>
 <main class="main-content">
   <!--Menu filters-->
-  <div class="tab-filter-wrapper">
-    <div class="tab-filter">
-      <ul>
-        <li class="placeholder">
-          <a data-type="all" href="#0">All</a>
-        </li>
-        <li *ngFor="let category of categories">
-          <a [class.selected]="category.selected" href="#0" (click)="clicked(category)">{{category.name}}</a>
-        </li>
-      </ul>
-    </div>
-  </div>
+  <app-menu [categories]="categories" (categoryChanged)="clicked($event)"></app-menu>
 
-  <!-- List parties -->
-  <section class="gallery" [class.filter-is-visible]="!navClosed">
-    <ul>
-      <li *ngFor="let party of parties">
-        <img src="{{party.logo}}" (click)="clicked" title="{{party.titel}}"/>
-      </li>
-    </ul>
-  </section>
+  <!--List parties-->
+  <app-party-list [parties]="parties" [sidebarVisible]="sidebarVisible"></app-party-list>
 
   <!--Sidebar navigation-->
-  <div>
-    <div [ngClass]="!navClosed ? 'filter filter-is-visible': 'filter'">
-      <form>
-        <div class="filter-block">
-          <h4>Search</h4>
-          <div class="filter-content">
-            <form (submit)="search()">
-              <input class="form-control" type="text" id="search" required
-                     [(ngModel)]="searchString" name="searchString" placeholder="Title or category">
-            </form>
-          </div>
-        </div>
-      </form>
-      <a href="#0" class="close" (click)="toggleSideBar()">Close</a>
-    </div>
-
-    <a href="#0" class="filter-trigger" (click)="toggleSideBar()">Filters</a>
-  </div>
+  <app-sidebar (searchParty)="handleSearch($event)" (sidebarToggled)="handleSidebarToggle()" [sidebarVisible]="sidebarVisible"></app-sidebar>
 </main>
